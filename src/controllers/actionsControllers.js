@@ -22,6 +22,9 @@ const deployPortfolioSite = async () => {
   const command =
     "rm -rf ../build/* && hugo --destination ../build && rsync -av --delete ../build/ ../live/public/"
   await runCommand(command, { cwd })
+
+  const today = new Date()
+  console.log(`✅ Site rebuilt on ${today.toLocaleString()}`)
 }
 
 /**
