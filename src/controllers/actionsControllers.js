@@ -18,7 +18,7 @@ const runCommand = async (cmd, options = {}) => {
 
 const deployPortfolioSite = async () => {
   console.log("Starting Hugo build...")
-  const cwd = "/home/containers/portfolio/src"
+  const cwd = "/home/containers/portfolio/hugo"
   const command =
     "rm -rf ../build/* && hugo --destination ../build && rsync -av --delete ../build/ ../live/public/"
   await runCommand(command, { cwd })
