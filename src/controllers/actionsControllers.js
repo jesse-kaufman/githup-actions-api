@@ -20,7 +20,7 @@ const deployPortfolioSite = async () => {
   console.log("Starting Hugo build...")
   const cwd = "/home/containers/portfolio/src"
   const command =
-    "hugo --destination ../build && rsync -av --delete ../build/ ../live/public/"
+    "rm -rf ../build/* && hugo --destination ../build && rsync -av --delete ../build/ ../live/public/"
   await runCommand(command, { cwd })
 }
 
